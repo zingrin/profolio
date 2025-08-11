@@ -29,7 +29,6 @@ const projects = [
       "Ensuring responsive design across all devices",
     ],
     clientLink: "https://github.com/zingrin/speakstack-client",
-    serverLink: "https://github.com/zingrin/speakstack-server",
     liveLink: "https://speakstack-a1b8a.web.app/",
     images: [project31Img, project32Img, project33Img],
   },
@@ -43,7 +42,6 @@ const projects = [
       "Creating a dynamic dashboard with nested routes",
     ],
     clientLink: "https://github.com/zingrin/Summer-Box",
-    serverLink: "https://github.com/yourserverrepo",
     liveLink: "https://summer-box.web.app/",
     images: [project1Img, project2Img, project3Img],
   },
@@ -57,7 +55,6 @@ const projects = [
       "Building real-time update functionality for posts and comments",
     ],
     clientLink: "https://github.com/zingrin/hobby-hub-client-side",
-    serverLink: "https://github.com/zingrin/hobby-hub-server-side",
     liveLink: "https://hobby-hub-88270.web.app/",
     images: [projectImg11, projectImg112, projectImg113],
   },
@@ -84,7 +81,7 @@ const ProjectsShowcase = () => {
 
       <div className="space-y-12">
         {projects.map((project, idx) => {
-          const isEven = idx % 2 === 1; // Alternate layout for even index projects
+          const isEven = idx % 2 === 1; 
 
           return (
             <div
@@ -131,14 +128,7 @@ const ProjectsShowcase = () => {
                   >
                     Client
                   </a>
-                  <a
-                    href={project.serverLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-sm btn-outline btn-info"
-                  >
-                    Server
-                  </a>
+                  
                   <a
                     href={project.liveLink}
                     target="_blank"

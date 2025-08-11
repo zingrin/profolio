@@ -2,7 +2,7 @@ import React from "react";
 import profileImg from "../assets/profile.jpg";
 import { Typewriter } from "react-simple-typewriter";
        import { motion } from "framer-motion";
-import { FaFacebook, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import {  FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -17,7 +17,7 @@ const Hero = () => {
           And I'm a{" "}
           <span className="text-cyan-400">
             <Typewriter
-              words={["Full Stack Developer", "React Developer", "UI Designer"]}
+              words={["MERN Stack Developer", "React Developer", "UI Designer"]}
               loop={true}
               cursor
               cursorStyle="|"
@@ -75,10 +75,7 @@ const Hero = () => {
           </a>
         ))}
       </div>
-  {/* Button */}
-  <button className="px-6 py-2 bg-cyan-500 text-black font-semibold rounded-full hover:bg-cyan-400 transition-all duration-300">
-    Download Resume
-  </button>
+  
 </motion.div>
 
       </div>

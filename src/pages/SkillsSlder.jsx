@@ -25,6 +25,7 @@ const SingleSkillsSlider = ({ direction, isPaused }) => {
   const containerRef = useRef(null);
   const [scrollPos, setScrollPos] = useState(0);
 
+  // Duplicate skills array for seamless looping
   const duplicatedSkills = [...skills, ...skills];
 
   useEffect(() => {
@@ -64,15 +65,15 @@ const SingleSkillsSlider = ({ direction, isPaused }) => {
   return (
     <div
       ref={containerRef}
-      className="overflow-x-auto whitespace-nowrap cursor-pointer select-none bg-gray-100 dark:bg-gray-900 rounded-lg mb-6 no-scrollbar"
+      className="overflow-x-hidden whitespace-nowrap cursor-pointer select-none bg-gray-100 dark:bg-gray-900 rounded-lg mb-6 no-scrollbar"
       style={{ scrollBehavior: "auto" }}
       aria-label="Skills scrolling slider"
     >
       {duplicatedSkills.map((skill, index) => (
         <div
           key={index}
-          className="inline-block bg-white dark:bg-gray-800 text-cyan-400 font-semibold rounded-xl px-6 py-4 mx-3 text-center shadow-[0_4px_10px_rgba(6,182,212,0.6)] transition-transform duration-300 hover:scale-110"
-          style={{ width: "130px" }}
+          className="inline-block bg-gray-100 dark:bg-gray-800 text-cyan-400 font-semibold rounded-xl px-6 py-4 mx-3 text-center shadow-[0_4px_10px_rgba(6,182,212,0.6)] transition-transform duration-300 hover:scale-110"
+          style={{ width: "130px", willChange: "transform" }}
           role="listitem"
           tabIndex={0}
           aria-label={skill.name}
@@ -91,6 +92,7 @@ const SkillsSlider = () => {
 
   return (
     <section aria-label="Skills slider section">
+      {/* Top slider */}
       <div
         onMouseEnter={() => setIsPausedTop(true)}
         onMouseLeave={() => setIsPausedTop(false)}
@@ -98,6 +100,7 @@ const SkillsSlider = () => {
         <SingleSkillsSlider direction="left" isPaused={isPausedTop} />
       </div>
 
+      {/* Bottom slider */}
       <div
         onMouseEnter={() => setIsPausedBottom(true)}
         onMouseLeave={() => setIsPausedBottom(false)}
