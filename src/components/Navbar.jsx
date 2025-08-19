@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router"; 
+import { NavLink } from "react-router";
 import Logo from "../pages/Logo";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="bg-black text-white shadow-md">
+    <nav className="bg-black text-white shadow-md sticky top-0 z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <Logo />
 
@@ -41,7 +41,7 @@ const Navbar = () => {
           {/* Resume Download Button */}
           <li>
             <a
-              href="/resume.pdf" // Put your actual resume file path here
+              href="/resume.pdf"
               download
               className="btn btn-sm btn-outline btn-cyan ml-4"
               target="_blank"

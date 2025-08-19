@@ -1,8 +1,8 @@
 import React from "react";
 import profileImg from "../assets/profile.jpg";
 import { Typewriter } from "react-simple-typewriter";
-       import { motion } from "framer-motion";
-import {  FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const Hero = () => {
   return (
@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="md:w-1/2 space-y-6">
         <h2 className="text-xl text-gray-400">Hello, It's Me</h2>
         <h1 className="text-xl md:text-5xl font-bold text-cyan-400">
-         Zingrin Loncheu
+          Zingrin Moi Bawm
         </h1>
         <h3 className="text-2xl text-cyan-300">
           And I'm a{" "}
@@ -28,56 +28,53 @@ const Hero = () => {
           </span>
         </h3>
         <p className="text-gray-300">
-          I'm a passionate web designer and  React developer with 7+ months
-          of hands-on experience. I craft modern, responsive websites and
-          intuitive frontend interfaces, combining creativity with cutting-edge
-          technology to deliver seamless digital experiences.
+          I am a dedicated Web Designer and React Developer, specializing in
+          creating modern, responsive websites and intuitive frontend
+          interfaces. I blend creativity with advanced technologies to deliver
+          seamless and engaging digital experiences.
         </p>
 
+        {/* Social Icons + Button with animation */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className="flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0 mt-6"
+        >
+          {/* Social Icons */}
 
-{/* Social Icons + Button with animation */}
-<motion.div
-  initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 1, delay: 0.3 }}
-  className="flex flex-col md:flex-row md:items-center md:space-x-6 space-y-4 md:space-y-0 mt-6"
->
-  {/* Social Icons */}
-  
- <div className="flex justify-center space-x-6 mb-4 text-2xl">
-        {[
-          {
-            icon: <FaWhatsapp />,
-            link: "https://web.whatsapp.com/",
-            label: "WhatsApp",
-          },
-          {
-            icon: <FaLinkedin />,
-            link: "https://www.linkedin.com/in/zingrin-loncheu-902503379/",
-            label: "LinkedIn",
-          },
-         
-          {
-            icon: <FaGithub />,
-            link: "https://github.com/zingrin",
-            label: "GitHub",
-          },
-        ].map((item, idx) => (
-          <a
-            key={idx}
-            href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-cyan-400 transform hover:-translate-y-1 transition-all duration-300"
-            aria-label={item.label}
-          >
-            {item.icon}
-          </a>
-        ))}
-      </div>
-  
-</motion.div>
+          <div className="flex justify-center space-x-6 mb-4 text-2xl">
+            {[
+              {
+                icon: <FaWhatsapp />,
+                link: "https://web.whatsapp.com/",
+                label: "WhatsApp",
+              },
+              {
+                icon: <FaLinkedin />,
+                link: "https://www.linkedin.com/in/zingrin-loncheu-902503379/",
+                label: "LinkedIn",
+              },
 
+              {
+                icon: <FaGithub />,
+                link: "https://github.com/zingrin",
+                label: "GitHub",
+              },
+            ].map((item, idx) => (
+              <a
+                key={idx}
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-400 transform hover:-translate-y-1 transition-all duration-300"
+                aria-label={item.label}
+              >
+                {item.icon}
+              </a>
+            ))}
+          </div>
+        </motion.div>
       </div>
 
       {/* Right Content: Animated Glowing Image */}
@@ -91,7 +88,6 @@ const Hero = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
